@@ -28,3 +28,22 @@ indices:
   vpn-:
     delete: 11
     optimize: 2
+
+  api-access-:
+    close: 10
+    delete: 80
+    optimize: 1
+    reallocate: 2
+    settings:
+      optimize_nowait: false
+      close_replic: false
+      max_num_segments: 16
+  nx-error-:
+    close: 31
+    delete: 62
+    optimize: 1
+    reallocate: 2
+    settings:
+      optimize_nowait: false
+      close_replic: true
+      max_num_segments: 4
