@@ -171,8 +171,9 @@ def close_indices(esclient, indices):
         return
     indices = indices.keys()
     logger.debug("try to close %s" % ','.join(indices))
-    if curator.close_indices(esclient, indices):
-        logger.info('indices closed: %s' % ','.join(indices))
+    for index in indices:
+        if curator.close_indices(esclient, [index]):
+            logger.info('indices closed: %s' % index)
 
 
 def delete_indices(esclient, indices):
